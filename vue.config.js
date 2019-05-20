@@ -4,6 +4,7 @@ module.exports = {
       sass: {
         data: `
           @import "@/assets/styles/_vars.scss";
+          @import "@/assets/styles/grid.scss";
         `
       }
     }
