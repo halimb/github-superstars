@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <ReposList/>
+    <List/>
   </div>
 </template>
 
 <script>
-import ReposList from '@/components/ReposList.vue'
+import List from '@/components/List.vue'
 
 export default {
   name: 'app',
   components: {
-    ReposList
+    List
   }
 }
 </script>
