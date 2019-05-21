@@ -1,6 +1,7 @@
 <template>
   <div class="f justify-center align-center">
-    <div class="wrapper f">
+    <Loader v-if="isLoading"></Loader>
+    <div v-else class="wrapper f">
       <Card></Card>
     </div>
   </div>
@@ -9,12 +10,14 @@
 <script>
 import Repos from '@/providers/Repos';
 import Card from '@/components/Card';
+import Loader from '@/components/Loader';
 
 export default {
   name: 'List',
-  components: [
-    Card
-  ],
+  components: {
+    Card,
+    Loader,
+  },
   props: {
     /**
      * Unix timestamp in miliseconds.
@@ -30,7 +33,7 @@ export default {
      */
     sort: {
       type: String,
-      default: Best
+      default: 'stars'
     },
     /**
      * Results order
@@ -42,18 +45,32 @@ export default {
       default: 'desc'
     }
   },
+  data: () => ({
+    repos: [],
+    isLoading: true
+  }),
   mounted() {
     this.fetch();
   },
   methods: {
     async fetch() {
-      let repos = await Repos.get({
-        q: 'created:>2000-01-21',
-        sort: 'stars',
-        order: 'desc'
+      let startDate = new Date(this.since).toISOString().slice(0, 10);
+      let results = await Repos.get({
+        q: `created:>${startDate}`,
+        sort: this.sort,
+        order: this.order
       });
-      console.log(repos)
-      return repos;
+      
+      if (results.error) {
+        this.showErrorMessage(results.error);
+        return;
+      }
+
+      this.repos = results;
+      this.isLoading = false;
+    },
+    showErrorMessage() { 
+      // TODO - implement
     }
   }
 }
