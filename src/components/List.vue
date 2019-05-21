@@ -11,7 +11,7 @@ import Repos from '@/providers/Repos';
 import Card from '@/components/Card';
 
 export default {
-  name: 'RepoList',
+  name: 'List',
   components: [
     Card
   ],
