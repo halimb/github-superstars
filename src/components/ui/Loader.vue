@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Overlay from '@/components/Overlay';
-import Spinner from '@/components/Spinner';
+import Overlay from '@/components/ui/Overlay';
+import Spinner from '@/components/ui/Spinner';
 
 export default {
   name: 'Loader',

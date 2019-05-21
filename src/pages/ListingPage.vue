@@ -10,7 +10,7 @@
 <script>
 import Repos from '@/providers/Repos';
 import Card from '@/components/Card';
-import Loader from '@/components/Loader';
+import Loader from '@/components/ui/Loader';
 
 export default {
   name: 'ListingPage',
