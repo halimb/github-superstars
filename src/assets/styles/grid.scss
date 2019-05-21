@@ -22,16 +22,16 @@ $columns: 12;
     }
 }
 
-// Flex items alignment
+// Flex items alignment classes
 @each $alignment in flex-start, flex-end, center, baseline, stretch {
-    .align-items-#{$alignment} {
+    .align-#{$alignment} {
         align-items: $alignment;
     }
 }
 
-// Flex content justification
+// Flex content justification classes
 @each $justification in start, end, center, space-between, space-around, space-evenly {
-    .justify-content-#{$justification} {
+    .justify-#{$justification} {
         justify-content: $justification;
     }
 }
