@@ -1,3 +1,6 @@
+// Grid system
+$columns: 12;
+
 .f {
     display: flex;
 }
@@ -8,4 +11,27 @@
 
 .f-column {
     flex-direction: column;
+}
+
+// Classes: col-1 through col-12
+@for $i from 1 through $columns {
+    .col-#{$i} {
+        flex: 0 0 percentage($i / 12);
+        -ms-flex: 0 0 percentage($i / 12);
+        max-width: percentage($i / 12);
+    }
+}
+
+// Flex items alignment
+@each $alignment in flex-start, flex-end, center, baseline, stretch {
+    .align-items-#{$alignment} {
+        align-items: $alignment;
+    }
+}
+
+// Flex content justification
+@each $justification in start, end, center, space-between, space-around, space-evenly {
+    .justify-content-#{$justification} {
+        justify-content: $justification;
+    }
 }
