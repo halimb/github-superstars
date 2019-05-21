@@ -2,36 +2,36 @@
 $columns: 12;
 
 .f {
-    display: flex;
+  display: flex;
 }
 
 .f-row {
-    flex-direction: row;
+  flex-direction: row;
 }
 
 .f-column {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 // Classes: col-1 through col-12
 @for $i from 1 through $columns {
-    .col-#{$i} {
-        flex: 0 0 percentage($i / 12);
-        -ms-flex: 0 0 percentage($i / 12);
-        max-width: percentage($i / 12);
-    }
+  .col-#{$i} {
+    flex: 0 0 percentage($i / 12);
+    -ms-flex: 0 0 percentage($i / 12);
+    max-width: percentage($i / 12);
+  }
 }
 
 // Flex items alignment classes
 @each $alignment in flex-start, flex-end, center, baseline, stretch {
-    .align-#{$alignment} {
-        align-items: $alignment;
-    }
+  .align-#{$alignment} {
+    align-items: $alignment;
+  }
 }
 
 // Flex content justification classes
 @each $justification in start, end, center, space-between, space-around, space-evenly {
-    .justify-#{$justification} {
-        justify-content: $justification;
-    }
+  .justify-#{$justification} {
+    justify-content: $justification;
+  }
 }
