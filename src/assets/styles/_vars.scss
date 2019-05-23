@@ -1,3 +1,9 @@
 // Colors
 $primary: #ff8a65;
 $dark: #333; 
+
+:export {
+  primary: $primary;
+  dark: $dark;
+}
+
