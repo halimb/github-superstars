@@ -30,7 +30,7 @@
 
 @mixin margins($dim, $unit: "") {
   .m-#{$dim} {
-    margin: 10;
+    margin: $dim#{$unit};
   }
   .mt-#{$dim} {
     margin-top: $dim#{$unit};
