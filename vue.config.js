@@ -7,6 +7,7 @@ module.exports = {
           @import "@/assets/styles/_grid.scss";
           @import "@/assets/styles/_common.scss";
           @import "@/assets/styles/_spacing.scss";
+          @import "@/assets/styles/_display.scss";
         `
       }
     }
