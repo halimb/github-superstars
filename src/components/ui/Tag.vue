@@ -17,22 +17,26 @@ export default {
     label: {
       type: String
     },
-    color: {
+    background: {
       type: String
+    },
+    color: {
+      type: String,
+      default: '#eee'
     },
     size: {
       type: Number,
-      default: 16
+      default: 13
     }
   },
   computed: {
-    _color() {
-      return this.color || this.theme.colors.dark
+    _background() {
+      return this.background || this.theme.colors.dark
     },
     style() {
       return {
-        border: `1px solid ${this._color}`,
-        backgroundColor: '#fff',
+        color: this.color,
+        backgroundColor: this._background,
         fontSize: `${this.size}px`
       }
     } 
@@ -42,10 +46,12 @@ export default {
 
 <style lang="scss">
 .tag {
+  display: inline-block;
+  margin: .2rem;
   .tag-content {
-    display: inline-block;
-    border-radius: .3rem;
-    padding: .2rem 1rem;
+    border-radius: 1000px;
+    padding: .2rem .5rem;
+    box-shadow: $box-shadow;
   }
 }
 </style>
