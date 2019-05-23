@@ -7,7 +7,7 @@
     }"
     >
     <div class="avatar-img">
-      <img 
+      <img
         alt="avatar"
         ref="imageElement"
         @load="onImageLoad"
@@ -47,12 +47,7 @@ export default {
 <style lang="scss">
 .avatar {
   display: inline-block;
-  border: 1px solid black;
   .avatar-img {
-    display:block;
-    overflow: hidden;
-    border-radius: 1000px;
-    max-width: unset;
     &--portrait {
       width: 100%;
       height: auto;
@@ -60,6 +55,13 @@ export default {
     &--landscape {
       width: auto;
       height: 100%;
+    }
+    img {
+      display:block;
+      max-width: unset;
+      border-radius: 1000px;
+      background: white;
+      box-shadow: $box-shadow;
     }
   }
 }
