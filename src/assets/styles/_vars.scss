@@ -3,6 +3,13 @@ $primary: #ff8a65;
 $dark: #333;
 $box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
    
+// Grid system
+$columns: 12;
+$breakpoints: (
+  xs: 0px,
+  sm: 576px,
+  md: 768px
+);
 
 :export {
   primary: $primary;
