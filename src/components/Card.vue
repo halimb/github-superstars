@@ -1,40 +1,50 @@
 <template>
-  <div class="card f"> 
-    <div class="side-pane col-3 f f-column justify-center align-center">
-      <Avatar 
-        size="100"
-        :src="repo.owner.avatar_url"
-        >
-      </Avatar>
-    </div>
-    <div class="col-9 f f-column justify-center">
-      <h3>
-        {{ this.repo.name }}
-      </h3>
-      <p>
-        {{ this.repo.description }}
-      </p>
-      <div class="f">
-        <Tag
-          label="Stars:"
-        >
-          <strong>
-            {{ this.repo.stargazers_count }}
-          </strong>
-        </Tag>
+  <div class="card f f-column f-md-row"> 
 
-        <Tag
-          label="Issues:"
-        >
+    <!-- Side pane -->
+    <div class="side-pane f f-column col-2 col-lg-3 justify-center align-center">
+        <Avatar 
+          class="m-10 mx-20"
+          :size="80"
+          :image="repo.owner.avatar_url"
+          >
+        </Avatar>
+        <div class="f f-wrap align-space-between justify-center mb-20">
+          <!-- Stars -->
+          <Tag label="Stars" :background="colors.star">
+            <strong>
+              {{ this.repo.stargazers_count }}
+            </strong>
+          </Tag>
+          <!-- Issues -->
+          <Tag label="Issues" :background="colors.issue">
+            <strong>
+              {{ this.repo.open_issues_count }}
+            </strong>
+          </Tag>
+      </div>
+    </div>
+
+    <!-- Card content -->
+    <div class="col-10 col-lg-9 f f-column justify-space-between">
+      <div class="f f-column m-10 mx-20">
+        <h3>
+          {{ this.repo.name }}
+        </h3>
+        <p>
+          {{ this.repo.description }}
+        </p>
+      </div>
+      <div class="f m-10 mx-20">
+        <span class="mt-auto ml-auto">
+          Last updated: 
           <strong>
-            {{ this.repo.open_issues_count }}
+            {{ formattedDate }}
           </strong>
-        </Tag>
-        <span>
-          Last updated at {{ formattedDate }}
         </span>
       </div> 
     </div>
+    
   </div>
 </template>
 
@@ -66,6 +76,12 @@ export default {
       })
     }
   },
+  data: () => ({
+    colors: {
+      issue: '#dd2d2d',
+      star: '#317837'
+    }
+  }),
   computed: {
     formattedDate() {
       return moment(this.repo.updated_at).fromNow();
@@ -81,7 +97,7 @@ export default {
   box-shadow: $box-shadow;
   overflow: hidden;
   margin: 1.5rem;
-  height: 300px;
+  min-height: 150px;
   .side-pane {
     background-color: $primary;
   }
