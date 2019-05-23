@@ -1,37 +1,28 @@
-// Grid system
-$columns: 12;
+/**
+ * Grid system related classes
+ */
 
-.f {
-  display: flex;
+@import 'vars';
+
+// generate attributes for a col-X class
+@mixin col($portion) {
+  flex: 0 0 percentage($portion / 12);
+  -ms-flex: 0 0 percentage($portion / 12);
+  max-width: percentage($portion / 12);
 }
 
-.f-row {
-  flex-direction: row;
-}
-
-.f-column {
-  flex-direction: column;
-}
-
-// Classes: col-1 through col-12
+// Classes: col-1 through col-12 with responsive variants
 @for $i from 1 through $columns {
+  // Base classes 
   .col-#{$i} {
-    flex: 0 0 percentage($i / 12);
-    -ms-flex: 0 0 percentage($i / 12);
-    max-width: percentage($i / 12);
+    @include col($i);
   }
-}
-
-// Flex items alignment classes
-@each $alignment in flex-start, flex-end, center, baseline, stretch {
-  .align-#{$alignment} {
-    align-items: $alignment;
-  }
-}
-
-// Flex content justification classes
-@each $justification in start, end, center, space-between, space-around, space-evenly {
-  .justify-#{$justification} {
-    justify-content: $justification;
-  }
+  // Responsive variants
+  @each $bp, $value in $breakpoints {
+    @media (min-width: $value) {
+      .col-#{$bp}-#{$i} {
+        @include col($i);
+      }
+    }
+  } 
 }
