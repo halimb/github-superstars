@@ -12,7 +12,7 @@ export default {
     let result = {};
     try {
       let response = await Api.get('/search/repositories', { params: options });
-      result = response.data;
+      result = response.data.items;
     } catch (error) {
       result.error = error;
     }
