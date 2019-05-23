@@ -1,6 +1,9 @@
 # Github Superstars
 
-Browse the most starred Github repos of the last 30 days.
+Browse the most starred Github repos of the last 30 days. 
+
+**Live preview**: https://halimb.github.io/github-superstars/
+
 
 ## Installation
 
@@ -29,4 +32,4 @@ the bundled version will be: `./public/index.html`
 
 ## Author
 
-* [**Abdel Halim Bouguedra**](https://github.com/halimb)
+* [**Abdel Halim Bouguedra**](https://www.linkedin.com/in/abdel-halim-bouguedra-72b9a6133/)
