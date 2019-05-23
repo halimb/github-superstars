@@ -1,0 +1,62 @@
+/**
+ * Display related classes
+ */
+
+@import 'vars';
+
+// Base flex xlasses
+.f {
+  display: flex;
+}
+
+.f-row {
+  flex-direction: row;
+}
+
+.f-column {
+  flex-direction: column;
+}
+
+// Responsive flex direction classes
+@each $bp, $value in $breakpoints {
+  @media (min-width: $value) {
+    .f-#{$bp}-row {
+      flex-direction: row;
+    }
+    .f-#{$bp}-column {
+      flex-direction: column;
+    }
+  }
+}
+
+// Flex items alignment classes
+@each $alignment in flex-start, flex-end, center, baseline, stretch {
+  // Base classes
+  .align-#{$alignment} {
+    align-items: $alignment;
+  }
+  // Repsponsive variants
+  @each $bp, $value in $breakpoints {
+    @media (min-width: $value) {
+      .align-#{$bp}-#{justification} {
+        align-items: $alignment;
+      }
+    }
+  } 
+}
+
+// Flex content justification classes
+@each $justification in start, end, center, space-between, space-around, space-evenly {
+  // Base classes
+  .justify-#{$justification} {
+    justify-content: $justification;
+  }
+  // Responsive variants
+  @each $bp, $value in $breakpoints {
+    @media (min-width: $value) {
+      .justify-#{$bp}-#{justification} {
+        justify-content: row;
+      }
+    }
+  }  
+}
