@@ -2,13 +2,22 @@
   <div class="card f f-column f-md-row"> 
 
     <!-- Side pane -->
-    <div class="side-pane f f-column col-2 col-lg-3 justify-center align-center">
-        <Avatar 
-          class="m-10 mx-20"
-          :size="80"
-          :image="repo.owner.avatar_url"
-          >
-        </Avatar>
+    <div class="side-pane f f-md-column col-2 col-lg-3 align-center justify-space-around justify-md-center">
+        
+        <!-- Owner -->
+        <div class="f f-column align-center">
+          <Avatar 
+            class="m-10 mx-20"
+            :size="80"
+            :image="repo.owner.avatar_url"
+            >
+          </Avatar>
+          <strong class="mb-10">
+            {{ this.repo.owner.login }}
+          </strong>
+        </div>
+
+        <!-- Status -->
         <div class="f f-wrap align-space-between justify-center mb-20">
           <!-- Stars -->
           <Tag label="Stars" :background="colors.star">
@@ -23,6 +32,7 @@
             </strong>
           </Tag>
       </div>
+      
     </div>
 
     <!-- Card content -->
@@ -99,6 +109,7 @@ export default {
   margin: 1.5rem;
   min-height: 150px;
   .side-pane {
+    color: lightgray;
     background-color: $primary;
   }
 }
