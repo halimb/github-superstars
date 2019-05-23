@@ -1,5 +1,5 @@
 // Colors
-$primary: #ff8a65;
+$primary: rgb(96, 80, 220);
 $dark: #333;
 $box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
    
@@ -8,7 +8,8 @@ $columns: 12;
 $breakpoints: (
   xs: 0px,
   sm: 576px,
-  md: 768px
+  md: 768px,
+  lg: 992px
 );
 
 :export {
