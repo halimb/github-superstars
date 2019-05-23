@@ -1,6 +1,8 @@
 // Colors
 $primary: #ff8a65;
-$dark: #333; 
+$dark: #333;
+$box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+   
 
 :export {
   primary: $primary;
