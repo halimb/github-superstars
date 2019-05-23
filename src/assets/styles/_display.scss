@@ -17,14 +17,18 @@
   flex-direction: column;
 }
 
+.f-wrap {
+  flex-wrap: wrap;
+}
+
 // Responsive flex direction classes
 @each $bp, $value in $breakpoints {
   @media (min-width: $value) {
     .f-#{$bp}-row {
-      flex-direction: row;
+      flex-direction: row !important;
     }
     .f-#{$bp}-column {
-      flex-direction: column;
+      flex-direction: column !important;
     }
   }
 }
@@ -39,7 +43,7 @@
   @each $bp, $value in $breakpoints {
     @media (min-width: $value) {
       .align-#{$bp}-#{justification} {
-        align-items: $alignment;
+        align-items: $alignment !important;
       }
     }
   } 
@@ -55,7 +59,7 @@
   @each $bp, $value in $breakpoints {
     @media (min-width: $value) {
       .justify-#{$bp}-#{justification} {
-        justify-content: row;
+        justify-content: row !important;
       }
     }
   }  
