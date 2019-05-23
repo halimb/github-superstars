@@ -1,5 +1,7 @@
 <template>
-  <div class="card f f-column f-md-row"> 
+<div>
+
+  <a :href="repo.html_url" target="_blank" class="card f f-column f-md-row"> 
 
     <!-- Side pane -->
     <div class="side-pane f f-md-column col-2 col-lg-3 align-center justify-space-around justify-md-center">
@@ -54,7 +56,7 @@
         </span>
       </div> 
     </div>
-    
+  </a>
   </div>
 </template>
 
@@ -82,7 +84,7 @@ export default {
           login: 'RickSanchez',
           avatar_url: 'https://bit.ly/2JYee2Y',
         },
-        url: 'https://github.com/afuh/rick-and-morty-api'
+        html_url: 'https://github.com/afuh/rick-and-morty-api'
       })
     }
   },
@@ -108,9 +110,20 @@ export default {
   overflow: hidden;
   margin: 1.5rem;
   min-height: 150px;
+  position: relative;
+  transition: $transition-duration;
   .side-pane {
     color: lightgray;
     background-color: $primary;
+  }
+  &, & * {
+    text-decoration: none !important;
+    color: inherit;
+  }
+  &:hover {
+    transform: perspective(1000) translateZ(20px);
+    transition: $transition-duration;
+    box-shadow: $box-shadow-elevated;
   }
 }
 </style>
