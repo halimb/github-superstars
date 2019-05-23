@@ -4,8 +4,9 @@ module.exports = {
       sass: {
         data: `
           @import "@/assets/styles/_vars.scss";
-          @import "@/assets/styles/grid.scss";
-          @import "@/assets/styles/common.scss";
+          @import "@/assets/styles/_grid.scss";
+          @import "@/assets/styles/_common.scss";
+          @import "@/assets/styles/_spacing.scss";
         `
       }
     }
