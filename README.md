@@ -2,6 +2,8 @@
 
 Browse the most starred Github repos of the last 30 days. 
 
+![screenshot](./ghstars.png)
+
 **Live preview**: https://halimb.github.io/github-superstars/
 
 
